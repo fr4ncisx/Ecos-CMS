@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: ecos
+  profiles:
+    active: dev
+  data:
+    web:
+      pageable:
+        max-page-size: 100
+        default-page-size: 20
+  jpa:
+    open-in-view: false
+    properties:
+      hibernate.batch_fetch_style: DYNAMIC
+      hibernate.default_batch_fetch_size: 50
