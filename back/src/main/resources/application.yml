@@ -6,10 +6,28 @@ spring:
   data:
     web:
       pageable:
-        max-page-size: 100
+        max-page-size: 200
         default-page-size: 20
   jpa:
     open-in-view: false
     properties:
       hibernate.batch_fetch_style: DYNAMIC
-      hibernate.default_batch_fetch_size: 50
+      hibernate.default_batch_fetch_size: 8
+server:
+  compression:
+    min-response-size: 1KB
+    enabled: true
+    mime-types: application/json,application/xml,text/html,text/xml,text/plain
+  error:
+    include-stacktrace: never
+management:
+  server:
+    port: 9090
+  endpoints:
+     web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      show-details: always
+      show-components: always
